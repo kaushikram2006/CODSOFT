@@ -1,0 +1,61 @@
+# Simple Calculator in Python
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+
+def calculator():
+    line_length = 40
+    title = "CALCULATOR"
+    
+    print("=" * line_length)
+    print(title.center(line_length))
+    print("=" * line_length)
+    
+    while True:
+        print("\n Operations:")
+        print("1. Addition (+)")
+        print("2. Subtraction (-)")
+        print("3. Multiplication (*)")
+        print("4. Division (/)")
+        
+        try:
+            num1 = float(input("\n Enter first number: "))
+            num2 = float(input("Enter second number: "))
+            choice = input("Choose operation (1/2/3/4): ")
+
+            if choice == '1':
+                result = add(num1, num2)
+            elif choice == '2':
+                result = subtract(num1, num2)
+            elif choice == '3':
+                result = multiply(num1, num2)
+            elif choice == '4':
+                result = divide(num1, num2)
+            else:
+                print(" Invalid choice! Please enter 1-4.")
+                continue
+
+            print(f" Result: {result}")
+
+        except ValueError:
+            print(" Invalid input! Please enter numbers only.")
+            continue
+
+        again = input("\nDo you want to perform another calculation? (y/n): ").lower()
+        if again != 'y':
+            print("\nThank you for using CALCULATOR! ")
+            break
+
+if __name__ == "__main__":
+    calculator()
