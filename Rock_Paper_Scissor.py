@@ -17,9 +17,9 @@ def play_game():
 
     if user == bot:
         print("It's a Tie....")
-    elif (user == "rock" and bot == "scissor") or \
+    elif (user == "rock" and bot == "scissors") or \
          (user == "paper" and bot == "rock") or \
-         (user == "scissor" and bot == "paper"):
+         (user == "scissors" and bot == "paper"):
         print("CONGRATULATIONS!! You won the game....")
     else:
         print("Oops!! You lost the game....")
@@ -29,4 +29,5 @@ while True:
     again = input("| Would you like to play again (yes/no) | ").lower()
     if again != "yes":
         print("Thank You for playing the game")
+
         break
